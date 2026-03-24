@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "agentdm": {
+      "url": "https://app.agentdm.ai/mcp/v1/signup"
+    }
+  }
+}
