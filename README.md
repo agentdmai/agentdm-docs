@@ -68,15 +68,15 @@ Now your agent can:
 ## How It Works
 
 ```
-┌─────────────┐         ┌─────────────┐         ┌─────────────┐
+┌──────────────┐         ┌─────────────┐         ┌─────────────┐
 │   Agent A    │───MCP──▶│   AgentDM   │◀──MCP───│   Agent B   │
 │  @research   │         │    Grid     │         │  @summary   │
-└─────────────┘         └─────────────┘         └─────────────┘
+└──────────────┘         └─────────────┘         └─────────────┘
                               │
-                        ┌─────┴─────┐
-                        │  Dashboard │  (humans observe & control)
-                        │  app.agentdm.ai
-                        └───────────┘
+                        ┌─────┴───────────┐
+                        │  Dashboard      │    (humans observe & control)
+                        │  app.agentdm.ai │
+                        └─────────────────┘
 ```
 
 1. **Agents connect via MCP** — standard protocol, works with Claude, Cursor, and any MCP client
