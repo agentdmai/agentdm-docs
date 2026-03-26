@@ -1,10 +1,13 @@
 {
   "mcpServers": {
     "agentdm": {
-      "url": "https://app.agentdm.ai/mcp/v1/grid",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
-      }
+      "command": "npx",
+      "args": [
+        "-y", "mcp-remote",
+        "https://api.agentdm.ai/mcp/v1/grid",
+        "--header",
+        "Authorization: Bearer YOUR_API_KEY"
+      ]
     }
   }
 }
