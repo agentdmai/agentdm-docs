@@ -1,0 +1,212 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-brand-50: #f0f9f4;
+  --color-brand-100: #d9f0e3;
+  --color-brand-200: #b5e1c9;
+  --color-brand-300: #84cba8;
+  --color-brand-400: #51af83;
+  --color-brand-500: #2f9466;
+  --color-brand-600: #1f7751;
+  --color-brand-700: #195f42;
+  --color-brand-800: #164c36;
+  --color-brand-900: #0f3d2e;
+  --color-brand-950: #072219;
+
+  --color-background: #ffffff;
+  --color-foreground: #0a0a0a;
+  --color-primary: #0f3d2e;
+  --color-primary-foreground: #f0f9f4;
+  --color-secondary: #f5f5f5;
+  --color-secondary-foreground: #171717;
+  --color-muted: #f5f5f5;
+  --color-muted-foreground: #737373;
+  --color-border: #e5e5e5;
+  --color-ring: #0f3d2e;
+  --radius: 0.5rem;
+
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+}
+
+.dark {
+  --color-background: #0a0a0a;
+  --color-foreground: #fafafa;
+  --color-primary: #2f9466;
+  --color-primary-foreground: #f0f9f4;
+  --color-secondary: #262626;
+  --color-secondary-foreground: #fafafa;
+  --color-muted: #262626;
+  --color-muted-foreground: #a3a3a3;
+  --color-border: #262626;
+  --color-ring: #2f9466;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Prose dark mode */
+.dark .prose {
+  --tw-prose-body: #d4d4d4;
+  --tw-prose-headings: #fafafa;
+  --tw-prose-lead: #d4d4d4;
+  --tw-prose-links: #51af83;
+  --tw-prose-bold: #fafafa;
+  --tw-prose-counters: #a3a3a3;
+  --tw-prose-bullets: #a3a3a3;
+  --tw-prose-hr: #333;
+  --tw-prose-quotes: #d4d4d4;
+  --tw-prose-quote-borders: #404040;
+  --tw-prose-captions: #a3a3a3;
+  --tw-prose-code: #e6edf3;
+  --tw-prose-pre-code: #e6edf3;
+  --tw-prose-pre-bg: #0d1117;
+  --tw-prose-th-borders: #404040;
+  --tw-prose-td-borders: #333;
+}
+
+/* Code blocks */
+.prose pre {
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+.dark .prose pre {
+  border-color: #30363d;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.prose pre code {
+  font-size: 13.5px !important;
+  line-height: 1.7 !important;
+  color: #e6edf3 !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+/* Inline code */
+.prose :not(pre) > code {
+  background: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.875em;
+  font-weight: 500;
+  color: var(--color-foreground);
+}
+
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: "" !important;
+}
+
+/* Tables */
+.prose table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.prose thead th {
+  background: var(--color-secondary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.prose tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose tbody tr:hover {
+  background: var(--color-secondary);
+}
+
+/* Links */
+.prose a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s;
+}
+
+.dark .prose a {
+  color: #51af83;
+}
+
+.prose a:hover {
+  color: var(--color-brand-400);
+}
+
+/* Blockquotes */
+.prose blockquote {
+  border-left-color: var(--color-brand-400);
+  background: var(--color-secondary);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 20px;
+}
+
+/* Headings with anchor links */
+.prose h2,
+.prose h3 {
+  scroll-margin-top: 5rem;
+}
+
+.prose h2 {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Syntax highlighting token colors */
+.prose pre code .hljs-keyword,
+.prose pre code .hljs-selector-tag {
+  color: #ff7b72;
+}
+
+.prose pre code .hljs-string,
+.prose pre code .hljs-attr {
+  color: #a5d6ff;
+}
+
+.prose pre code .hljs-number,
+.prose pre code .hljs-literal {
+  color: #79c0ff;
+}
+
+.prose pre code .hljs-comment {
+  color: #8b949e;
+}
+
+.prose pre code .hljs-built_in {
+  color: #d2a8ff;
+}
+
+.prose pre code .hljs-title,
+.prose pre code .hljs-section {
+  color: #d2a8ff;
+}
+
+.prose pre code .hljs-property {
+  color: #84cba8;
+}
