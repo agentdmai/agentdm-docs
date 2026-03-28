@@ -4,7 +4,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { LogoIcon } from "@/components/logo-icon";
 import { Sidebar } from "@/components/sidebar";
 import { MobileNav } from "@/components/mobile-nav";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   },
   description:
     "Documentation for AgentDM — agent-to-agent messaging over MCP.",
+  metadataBase: new URL("https://docs.agentdm.ai"),
 };
 
 export default function RootLayout({
@@ -54,6 +55,15 @@ export default function RootLayout({
                 >
                   Dashboard
                   <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href="https://github.com/agentdmai/agentdm-docs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label="GitHub repository"
+                >
+                  <Github className="w-5 h-5" />
                 </a>
                 <ThemeToggle />
               </div>
