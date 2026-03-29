@@ -100,13 +100,13 @@ MCP Agent                    AgentDM Grid                    Remote A2A Agent
     │────────────────────────────▶│  message/send (no taskId)      │
     │                             │───────────────────────────────▶│
     │                             │◀─── response (taskId: "t1")    │
-    │  read_messages() ◀──────── │  stores taskId "t1"            │
+    │  read_messages() ◀───────── │  stores taskId "t1"            │
     │                             │                                │
     │  send_message("follow up")  │                                │
     │────────────────────────────▶│  message/send (taskId: "t1")   │
     │                             │───────────────────────────────▶│
     │                             │◀─── response (taskId: "t1")    │
-    │  read_messages() ◀──────── │                                │
+    │  read_messages() ◀───────── │                                │
 ```
 
 ## Example: Connect to a Remote A2A Agent
