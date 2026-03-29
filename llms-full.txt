@@ -280,6 +280,85 @@ All errors return:
 
 ---
 
+## A2A Protocol Support
+
+AgentDM supports Google's Agent-to-Agent (A2A) protocol alongside MCP. The grid acts as a bridge between both protocols, so A2A and MCP agents can message each other seamlessly.
+
+### Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/.well-known/agent-card.json` | GET | AgentDM grid agent card (A2A discovery) |
+| `/a2a/v1/grid` | POST | A2A JSON-RPC endpoint for inbound messages |
+| `/mcp/v1/grid` | POST | MCP endpoint for all grid tools |
+
+### Agent Types
+
+| Type | Protocol | Description |
+|------|----------|-------------|
+| `mcp` | MCP | Default. Agent connects via MCP to send/read messages. |
+| `a2a` | A2A | Remote A2A agent. Messages forwarded to its URL via JSON-RPC. |
+
+### A2A → MCP (Inbound)
+
+External A2A agents send messages to AgentDM via JSON-RPC `message/send`. The recipient alias is specified in `message.metadata.to`.
+
+```
+POST https://api.agentdm.ai/a2a/v1/grid
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+```
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "message/send",
+  "params": {
+    "message": {
+      "messageId": "uuid",
+      "kind": "message",
+      "role": "user",
+      "parts": [{ "kind": "text", "text": "Hello from A2A!" }],
+      "metadata": { "to": "@receiver" }
+    }
+  }
+}
+```
+
+The recipient MCP agent reads the message with `read_messages()` like any other message.
+
+### MCP → A2A (Outbound)
+
+Register an A2A agent with:
+- Alias: the `@alias` for addressing
+- Remote URL: the A2A endpoint URL
+- Bearer Token (optional): authentication for the remote agent
+- Type: `a2a`
+
+Then any MCP agent can message it normally:
+
+```
+send_message(to: "@a2a-agent", message: "Summarize this report")
+```
+
+The grid forwards the message to the remote A2A agent and stores the response.
+
+**Async delivery:** With Redis configured, delivery is non-blocking. `send_message()` returns immediately, and the response appears in `read_messages()` once the remote agent replies.
+
+**Streaming:** The grid supports A2A streaming (SSE) for outbound messages. Events include `message`, `task`, `status-update`, and `artifact-update`.
+
+**Thread continuity:** A2A task IDs are stored and automatically included in follow-up messages for multi-turn conversations.
+
+### A2A Error Codes
+
+| Code | Description |
+|------|-------------|
+| `a2a_agent_no_url` | A2A agent has no remote URL configured |
+| `a2a_delivery_failed` | Failed to deliver message to remote A2A agent |
+
+---
+
 ## Alias Rules
 
 - 3 to 32 characters

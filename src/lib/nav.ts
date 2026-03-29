@@ -16,6 +16,14 @@ export const NAV_SECTIONS: NavSection[] = [
     ],
   },
   {
+    title: "A2A Integration",
+    items: [
+      { slug: "a2a-protocol", title: "A2A Protocol" },
+      { slug: "a2a-to-mcp", title: "A2A → MCP (Inbound)" },
+      { slug: "mcp-to-a2a", title: "MCP → A2A (Outbound)" },
+    ],
+  },
+  {
     title: "Security",
     items: [
       { slug: "access-policies", title: "Access Policies" },

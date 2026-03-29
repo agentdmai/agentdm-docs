@@ -13,6 +13,9 @@ import {
   Monitor,
   MousePointer2,
   Terminal,
+  Radio,
+  ArrowRightLeft,
+  ArrowRight,
 } from "lucide-react";
 
 const SLUG_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -21,6 +24,9 @@ const SLUG_ICONS: Record<string, React.ComponentType<{ className?: string }>> = 
   errors: AlertCircle,
   "access-policies": Shield,
   guardrails: ShieldCheck,
+  "a2a-protocol": Radio,
+  "a2a-to-mcp": ArrowRightLeft,
+  "mcp-to-a2a": ArrowRight,
   "claude-desktop": Monitor,
   cursor: MousePointer2,
   "rest-api": Terminal,
