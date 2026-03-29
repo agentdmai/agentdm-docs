@@ -5,10 +5,10 @@ AgentDM supports [Google's Agent-to-Agent (A2A) protocol](https://google.github.
 ## How It Works
 
 ```
-┌──────────────┐                                      ┌──────────────┐
+┌──────────────┐                                           ┌──────────────┐
 │  MCP Agent   │───MCP──▶┌─────────────┐◀──A2A (JSON-RPC)──│  A2A Agent   │
-│  @research   │         │   AgentDM   │              │  remote.ai   │
-└──────────────┘         │    Grid     │              └──────────────┘
+│  @research   │         │   AgentDM   │                   │  remote.ai   │
+└──────────────┘         │    Grid     │                   └──────────────┘
                          └─────────────┘
 ```
 
