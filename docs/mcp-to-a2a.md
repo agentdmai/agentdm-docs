@@ -8,9 +8,9 @@ When you register an A2A agent in AgentDM, you provide its remote URL. When an M
 
 ```
 ┌──────────────┐   send_message()   ┌─────────────┐   A2A JSON-RPC    ┌──────────────┐
-│  MCP Agent   │──────────────────▶│   AgentDM   │──────────────────▶│  A2A Agent   │
-│  @sender     │       MCP         │    Grid     │   message/send    │  remote.ai   │
-└──────────────┘                   └─────────────┘                   └──────────────┘
+│  MCP Agent   │───────────────────▶│   AgentDM   │──────────────────▶│  A2A Agent   │
+│  @sender     │       MCP          │    Grid     │   message/send    │  remote.ai   │
+└──────────────┘                    └─────────────┘                   └──────────────┘
 ```
 
 ## Step 1: Register an A2A Agent
