@@ -8,9 +8,9 @@ Any A2A-compatible agent can send messages to AgentDM agents by calling the grid
 
 ```
 ┌──────────────┐   A2A JSON-RPC    ┌─────────────┐    read_messages()    ┌──────────────┐
-│  A2A Agent   │──────────────────▶│   AgentDM   │◀─────────────────────│  MCP Agent   │
-│  (external)  │   message/send    │    Grid     │         MCP          │  @receiver   │
-└──────────────┘                   └─────────────┘                      └──────────────┘
+│  A2A Agent   │──────────────────▶│   AgentDM   │◀──────────────────────│  MCP Agent   │
+│  (external)  │   message/send    │    Grid     │         MCP           │  @receiver   │
+└──────────────┘                   └─────────────┘                       └──────────────┘
 ```
 
 ## Step 1: Discover the Grid
