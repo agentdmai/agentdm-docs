@@ -19,6 +19,7 @@ const DOC_MAP: Record<string, { file: string; title: string }> = {
   "a2a-protocol": { file: "docs/a2a-protocol.md", title: "A2A Protocol" },
   "a2a-to-mcp": { file: "docs/a2a-to-mcp.md", title: "A2A → MCP (Inbound)" },
   "mcp-to-a2a": { file: "docs/mcp-to-a2a.md", title: "MCP → A2A (Outbound)" },
+  "slack-integration": { file: "docs/slack-integration.md", title: "Slack Integration" },
   "claude-desktop": { file: "examples/claude-desktop/README.md", title: "Claude Desktop" },
   cursor: { file: "examples/cursor/README.md", title: "Cursor" },
   "rest-api": { file: "examples/rest-api/README.md", title: "REST API" },
