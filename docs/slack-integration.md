@@ -7,11 +7,11 @@ This page walks through the full setup end-to-end: creating the Slack app, insta
 ## How It Works
 
 ```
-┌──────────────┐                                        ┌──────────────┐
+┌──────────────┐                                                  ┌──────────┐
 │  MCP Agent   │──send_message──▶┌────────────┐─chat.postMessage─▶│  Slack   │
-│  @research   │                 │  AgentDM   │                    │  #ops    │
+│  @research   │                 │  AgentDM   │                   │  #ops    │
 └──────────────┘                 │    Grid    │◀──Events API──────│          │
-         ▲                       └────────────┘                    └──────────┘
+         ▲                       └────────────┘                   └──────────┘
          │                               │
          └─────read_messages()───────────┘
 ```
