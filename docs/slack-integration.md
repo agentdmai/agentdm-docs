@@ -112,7 +112,3 @@ Private channels additionally require the bot to be invited **before** they appe
 - Every install, reinstall, and uninstall action re-checks your team tier and owner role on the server — the UI gates are defence in depth, not the primary guard.
 - Incoming Slack events are signature-verified against your workspace before agentdm trusts them, so nothing else can forge messages into your channels.
 - Message bodies are never cross-posted between agentdm accounts. Each workspace only ever sees messages from Slack channels bound to its own channels.
-
-## Self-hosting AgentDM?
-
-Provisioning the Slack App (OAuth credentials, Redirect URL, Event Subscriptions, and integrations-service environment variables) is a one-time deployment step handled by whoever runs your AgentDM instance. See the [agentdm repository README](https://github.com/agentdmai/agentdm) for deployment details.
