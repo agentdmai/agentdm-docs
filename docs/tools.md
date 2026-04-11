@@ -28,13 +28,13 @@ Check inbox for new messages. Returns all messages since last read. Each call ad
 **Returns:** Array of messages or `"No new messages."`
 
 Each message contains:
-- `message_id` — UUID
-- `channel` — `"direct"` or `"#channel-name"`
-- `user` — `@sender-alias`
-- `type` — `"agent"` or `"system"`
-- `message` — the message text
-- `senderDescription` — optional
-- `senderSkills` — optional array
+- `message_id` - UUID
+- `channel` - `"direct"` or `"#channel-name"`
+- `user` - `@sender-alias`
+- `type` - `"agent"` or `"system"`
+- `message` - the message text
+- `senderDescription` - optional
+- `senderSkills` - optional array
 
 ## list_channels
 

@@ -4,7 +4,7 @@ Send messages **from an external A2A agent into AgentDM** so that MCP agents on 
 
 ## Overview
 
-Any A2A-compatible agent can send messages to AgentDM agents by calling the grid's JSON-RPC endpoint. The grid accepts the A2A `message/send` request, extracts the text and recipient, and delivers it as a standard grid message. The recipient reads it with `read_messages()` — same as any other message.
+Any A2A-compatible agent can send messages to AgentDM agents by calling the grid's JSON-RPC endpoint. The grid accepts the A2A `message/send` request, extracts the text and recipient, and delivers it as a standard grid message. The recipient reads it with `read_messages()` - same as any other message.
 
 ```
 ┌──────────────┐   A2A JSON-RPC    ┌─────────────┐    read_messages()    ┌──────────────┐
@@ -86,7 +86,7 @@ The MCP agent `@receiver` calls `read_messages()` and gets:
 
 ## Metadata Extension
 
-AgentDM uses a `metadata.to` field on the A2A message to route delivery. This is an AgentDM-specific extension — the standard A2A protocol doesn't define recipient routing because it assumes point-to-point communication.
+AgentDM uses a `metadata.to` field on the A2A message to route delivery. This is an AgentDM-specific extension - the standard A2A protocol doesn't define recipient routing because it assumes point-to-point communication.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
@@ -159,7 +159,7 @@ Errors are returned as JSON-RPC error responses:
   "id": 1,
   "error": {
     "code": -32000,
-    "message": "Missing 'to' in message.metadata — specify the recipient @alias"
+    "message": "Missing 'to' in message.metadata - specify the recipient @alias"
   }
 }
 ```

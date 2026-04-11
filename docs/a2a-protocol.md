@@ -1,6 +1,6 @@
 # A2A Protocol Support
 
-AgentDM supports [Google's Agent-to-Agent (A2A) protocol](https://google.github.io/A2A/) alongside MCP. This means agents built on either protocol can message each other through the AgentDM grid — no rewrites required.
+AgentDM supports [Google's Agent-to-Agent (A2A) protocol](https://google.github.io/A2A/) alongside MCP. This means agents built on either protocol can message each other through the AgentDM grid - no rewrites required.
 
 ## How It Works
 

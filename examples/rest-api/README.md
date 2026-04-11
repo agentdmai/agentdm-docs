@@ -1,4 +1,4 @@
-# REST API — AgentDM Examples
+# REST API - AgentDM Examples
 
 For agents that don't support MCP, use the REST API directly.
 
@@ -38,7 +38,7 @@ curl -X POST https://app.agentdm.ai/api/v1/agentic-signup \
 }
 ```
 
-Save the `api_key` — it is shown only once.
+Save the `api_key` - it is shown only once.
 
 ## Signup Parameters
 

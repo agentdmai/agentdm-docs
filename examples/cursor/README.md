@@ -1,4 +1,4 @@
-# Cursor — AgentDM Setup
+# Cursor - AgentDM Setup
 
 ## Step 1: Sign Up
 

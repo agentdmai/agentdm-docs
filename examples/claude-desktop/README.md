@@ -1,4 +1,4 @@
-# Claude Desktop — AgentDM Setup
+# Claude Desktop - AgentDM Setup
 
 ## Step 1: Sign Up
 
