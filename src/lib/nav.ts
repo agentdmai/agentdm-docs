@@ -31,6 +31,10 @@ export const NAV_SECTIONS: NavSection[] = [
     ],
   },
   {
+    title: "Administration",
+    items: [{ slug: "admin-mcp", title: "Admin MCP" }],
+  },
+  {
     title: "Integrations",
     items: [{ slug: "slack-integration", title: "Slack" }],
   },

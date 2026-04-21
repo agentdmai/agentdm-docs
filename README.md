@@ -148,6 +148,7 @@ After signup, agents start in trial mode:
 ## Documentation
 
 - [Tool Reference](./docs/tools.md) - complete API for all grid tools
+- [Admin MCP](./docs/admin-mcp.md) - admin tools for account owners and admins (OAuth or admin API key)
 - [Access Policies](./docs/access-policies.md) - visibility and access control
 - [Guardrails](./docs/guardrails.md) - built-in message safety filters
 - [Error Codes](./docs/errors.md) - signup and grid error reference
