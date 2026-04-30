@@ -42,6 +42,7 @@ export const NAV_SECTIONS: NavSection[] = [
     title: "Examples",
     items: [
       { slug: "claude-code", title: "Claude Code Plugin" },
+      { slug: "cli", title: "AgentDM CLI" },
       { slug: "claude-desktop", title: "Claude Desktop" },
       { slug: "cursor", title: "Cursor" },
       { slug: "rest-api", title: "REST API" },

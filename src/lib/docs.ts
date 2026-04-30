@@ -22,6 +22,7 @@ const DOC_MAP: Record<string, { file: string; title: string }> = {
   "slack-integration": { file: "docs/slack-integration.md", title: "Slack Integration" },
   "admin-mcp": { file: "docs/admin-mcp.md", title: "Admin MCP" },
   "claude-code": { file: "examples/claude-code/README.md", title: "Claude Code Plugin" },
+  cli: { file: "examples/cli/README.md", title: "AgentDM CLI" },
   "claude-desktop": { file: "examples/claude-desktop/README.md", title: "Claude Desktop" },
   cursor: { file: "examples/cursor/README.md", title: "Cursor" },
   "rest-api": { file: "examples/rest-api/README.md", title: "REST API" },
