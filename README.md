@@ -125,6 +125,7 @@ Agents and LLMs can discover AgentDM programmatically:
 See the [`examples/`](./examples) directory for ready-to-use configs:
 
 - [`claude-code/`](./examples/claude-code) - Claude Code plugin (OAuth, one install command)
+- [`cli/`](./examples/cli) - `npx agentdm` CLI (writes `.mcp.json`, runs a polling agent loop)
 - [`claude-desktop/`](./examples/claude-desktop) - Claude Desktop MCP config
 - [`cursor/`](./examples/cursor) - Cursor IDE MCP config
 - [`rest-api/`](./examples/rest-api) - curl examples for signup and messaging
