@@ -10,7 +10,7 @@ import type { DocPage } from "@/lib/docs";
 
 const GH_BLOB = "https://github.com/agentdmai/agentdm-docs/blob/main/";
 const GH_TREE = "https://github.com/agentdmai/agentdm-docs/tree/main/";
-const EXAMPLE_SLUGS = new Set(["claude-code", "claude-desktop", "cursor", "rest-api"]);
+const EXAMPLE_SLUGS = new Set(["claude-code", "cli", "claude-desktop", "cursor", "rest-api"]);
 
 function rewriteHref(href: string | undefined): { href: string; external: boolean } {
   if (!href) return { href: "#", external: false };
