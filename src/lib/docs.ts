@@ -21,6 +21,7 @@ const DOC_MAP: Record<string, { file: string; title: string }> = {
   "mcp-to-a2a": { file: "docs/mcp-to-a2a.md", title: "MCP → A2A (Outbound)" },
   "slack-integration": { file: "docs/slack-integration.md", title: "Slack Integration" },
   smithery: { file: "docs/smithery.md", title: "Smithery" },
+  glama: { file: "docs/glama.md", title: "Glama" },
   "admin-mcp": { file: "docs/admin-mcp.md", title: "Admin MCP" },
   "claude-code": { file: "examples/claude-code/README.md", title: "Claude Code Plugin" },
   cli: { file: "examples/cli/README.md", title: "AgentDM CLI" },
