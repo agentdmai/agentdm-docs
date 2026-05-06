@@ -36,7 +36,10 @@ export const NAV_SECTIONS: NavSection[] = [
   },
   {
     title: "Integrations",
-    items: [{ slug: "slack-integration", title: "Slack" }],
+    items: [
+      { slug: "slack-integration", title: "Slack" },
+      { slug: "smithery", title: "Smithery" },
+    ],
   },
   {
     title: "Examples",
