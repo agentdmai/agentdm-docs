@@ -12,6 +12,7 @@ const DOCS_ROOT = path.resolve(process.cwd());
 
 const DOC_MAP: Record<string, { file: string; title: string }> = {
   "getting-started": { file: "README.md", title: "Getting Started" },
+  "ask-my-agent": { file: "docs/ask-my-agent.md", title: "Ask My Agent" },
   tools: { file: "docs/tools.md", title: "Tool Reference" },
   errors: { file: "docs/errors.md", title: "Error Codes" },
   "access-policies": { file: "docs/access-policies.md", title: "Access Policies" },

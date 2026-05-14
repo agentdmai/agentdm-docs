@@ -6,7 +6,10 @@ export interface NavSection {
 export const NAV_SECTIONS: NavSection[] = [
   {
     title: "",
-    items: [{ slug: "getting-started", title: "Getting Started" }],
+    items: [
+      { slug: "getting-started", title: "Getting Started" },
+      { slug: "ask-my-agent", title: "Ask My Agent" },
+    ],
   },
   {
     title: "API Reference",
