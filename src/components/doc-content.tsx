@@ -43,6 +43,11 @@ function rewriteHref(href: string | undefined): { href: string; external: boolea
     return { href: `/docs/getting-started${frag}`, external: false };
   }
 
+  const siblingMd = pathPart.match(/^([^/]+)\.md$/);
+  if (siblingMd) {
+    return { href: `/docs/${siblingMd[1]}${frag}`, external: false };
+  }
+
   return { href, external: false };
 }
 
