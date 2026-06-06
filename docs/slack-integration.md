@@ -24,18 +24,20 @@ This page walks you through installing Slack from the dashboard and binding an a
 
 | Requirement | Details |
 |---|---|
-| Plan | **Team tier**. The Connect Slack button and the Mirror to Slack dropdown are hidden on lower tiers. |
+| Plan | **Team tier** or **early access**. On tiers that don't include integrations, the Connect Slack button and the Mirror to Slack dropdown are hidden. |
 | Role | **Owner** of the account. Members cannot install, reinstall, or disconnect integrations. |
 
 ## Step 1 - Install Slack from the Dashboard
 
+> **Where to find it:** Slack is configured under **Menu → Account → Integration**, *not* under Team Settings. Team Settings only covers **Invite Team Member** and **Invitations** — it has no Integrations card.
+
 1. Sign in to the dashboard as the **account owner**.
-2. Open **Settings → Team**. Scroll to the **Integrations** card.
+2. Open **Menu → Account → Integration**.
 3. Click **Connect Slack**. You'll be redirected to Slack's standard consent screen.
 4. Pick the workspace you want to connect and click **Allow**.
-5. Slack redirects you back to the dashboard at **Settings → Team** with a **Slack connected** toast.
+5. Slack redirects you back to the dashboard at **Account → Integration** with a **Slack connected** toast.
 
-The Integrations card now shows the workspace name, the install timestamp, and two buttons:
+The Integration page now shows the workspace name, the install timestamp, and two buttons:
 
 - **Reinstall** - re-runs the OAuth flow (e.g. after adding new scopes). The old install row is soft-deleted and replaced.
 - **Disconnect** - soft-deletes the install. Channels bound to Slack immediately stop mirroring in both directions. Existing messages are untouched.
@@ -52,8 +54,8 @@ You can bind when creating a channel or later from channel settings.
 
    The dropdown lists every public and private channel the bot can see. Private channels only appear if the bot has been invited to them first - see [Step 3](#step-3---invite-the-bot-to-the-slack-channel).
 
-   - On lower tiers, the dropdown is replaced with an **upgrade required** hint.
-   - If Slack is not connected, the dropdown is replaced with a **Connect Slack in Settings → Team** hint.
+   - On tiers that don't include integrations, the dropdown is replaced with an **upgrade required** hint.
+   - If Slack is not connected, the dropdown is replaced with a **Connect Slack in Account → Integration** hint.
 
 4. Click **Create**. The channel is now mirrored to the Slack channel you picked.
 
@@ -90,7 +92,7 @@ Private channels additionally require the bot to be invited **before** they appe
 
 ## Disconnecting
 
-**From the dashboard.** Settings → Team → Integrations → **Disconnect**. Channels stay configured but stop mirroring until you reinstall.
+**From the dashboard.** Menu → Account → Integration → **Disconnect**. Channels stay configured but stop mirroring until you reinstall.
 
 **Unbinding a single channel.** Channel settings → Mirror to Slack → **None** → Save. The binding is cleared without touching the workspace-level install.
 
@@ -100,10 +102,12 @@ Private channels additionally require the bot to be invited **before** they appe
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| **Connect Slack button is missing** | Account is not on the Team plan, or you are not the owner. | Upgrade to Team, or have the owner install. |
+| **Connect Slack button is missing** | Looking under Team Settings (wrong place), not the owner, or the account tier doesn't include integrations. | Open **Menu → Account → Integration** first. If it's still missing, confirm you're the owner and that your tier includes Slack. |
 | **Mirror-to-Slack dropdown is empty** | Bot has no channels it can see yet. | Invite the bot to at least one channel in Slack. Private channels require an explicit `/invite`. |
-| **Outbound messages never arrive in Slack** | Bot is not a member of the target Slack channel, or the install was revoked. | `/invite @AgentDM` in that channel. Check Settings → Team → Integrations is still connected. |
-| **Inbound Slack replies do not appear in agentdm** | The Slack install has been revoked or is out of date. | Reinstall from **Settings → Team → Integrations → Reinstall**. |
+| **Outbound messages never arrive in Slack** | Bot is not a member of the target Slack channel, or the install was revoked. | `/invite @AgentDM` in that channel. Check Menu → Account → Integration is still connected. |
+| **Inbound Slack replies do not appear in agentdm** | The Slack install has been revoked or is out of date. | Reinstall from **Menu → Account → Integration → Reinstall**. |
+| **No Integrations or Slack card under Team Settings** | Looking in the wrong place. Team Settings only holds member invitations. | Slack lives under **Menu → Account → Integration**, not Team Settings. |
+| **`/api/integrations/slack/status` returns `{ connected: false }` after binding a channel via the API** | Setting a channel's `externalIntegrationType`/`externalChannelId` directly does **not** create the workspace install. The API accepts the update but there is no encrypted bot token to mirror with. | Run the OAuth flow once via **Menu → Account → Integration → Connect Slack**. Channel bindings only take effect after the workspace is connected. |
 | **Duplicate Slack messages on reinstall** | Old install row still active. | This cannot happen - the installer soft-deletes prior rows atomically before inserting. If you see duplicates, file an issue. |
 
 ## Security Notes
